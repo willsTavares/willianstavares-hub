@@ -53,7 +53,7 @@ details summary {
 }
 
 img.next-image {
-  margin: 0;
+  margin: 2rem;
 }
 
 .prose a {
@@ -62,4 +62,10 @@ img.next-image {
 
 .nav-line .nav-link {
   color: #69778c;
+}
+
+.center-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

@@ -52,10 +52,6 @@ details summary {
   cursor: pointer;
 }
 
-img.next-image {
-  margin: 2rem;
-}
-
 .prose a {
   color: #0074de;
 }
@@ -67,5 +63,6 @@ img.next-image {
 .center-icons {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
 }
+

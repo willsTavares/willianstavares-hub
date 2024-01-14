@@ -1,7 +1,7 @@
 ---
-title: O que é S.O.L.I.D?
-date: 2021/3/18
-description: Learn more about SOLID.
+title: 📃 O que é S.O.L.I.D?
+date: 2022/6/14
+description: Aprenda os principios de S.O.L.I.D.
 tag: arquitetura de sofware, padrões de desenvolvimento
 ---
 

@@ -1,7 +1,7 @@
 ---
-title: Arquitetura de Integração
-date: 2024/1/02
-description: Learn more about Next.js page.
+title: 📃 Arquitetura de Integração
+date: 2023/1/02
+description: Aprenda mais sobre Arquitetura de Integração.
 tag: arquitetura de software
 ---
 

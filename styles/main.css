@@ -66,3 +66,6 @@ details summary {
   justify-content: space-evenly;
 }
 
+.podcast {
+  border-radius: 12px;
+}

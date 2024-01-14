@@ -1,5 +1,5 @@
 ---
-title: 🎙️Podcast -Contos de um Desenvolvedor e Planos de Estudos
+title: 🎙️Podcast - Contos de um Desenvolvedor e Planos de Estudos
 date: 2021/6/18
 description: Neste episódio conversaremos sobre o mundo de desenvolvimento e como montar ou se organizar para planejar um estudo de carreira, confira a conversa e compartilhe sua experiência conosco.
 tag: podcast, desenvolvimento

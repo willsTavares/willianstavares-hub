@@ -1,7 +1,7 @@
 ---
 title: 📃 O que é S.O.L.I.D?
 date: 2022/6/14
-description: Aprenda os principios de S.O.L.I.D.
+description: Este artigo explora de forma acessível os fundamentos dessa abordagem para design de software. Aprenda e aplique esses princípios para um código mais robusto e flexível.
 tag: arquitetura de sofware, padrões de desenvolvimento
 ---
 

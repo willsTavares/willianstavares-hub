@@ -1,7 +1,7 @@
 ---
 title: 📃 Arquitetura de Integração
 date: 2023/1/02
-description: Aprenda mais sobre Arquitetura de Integração.
+description: A arquitetura de integração refere-se à estrutura e design de sistemas que facilitam a comunicação e a interação entre diferentes componentes de software, sistemas ou aplicações.
 tag: arquitetura de software
 ---
 
@@ -11,11 +11,9 @@ A arquitetura de integração refere-se à estrutura e design de sistemas que fa
 
 Dessa maneira surge a arquitetura de integração, como uma forma de estabelecer formatos e mecanismos que evite ao máximo a latência com a qual os dados serão disponibilizados entre os sistemas, assim como independência de cada serviço nessa rede de conexões. Em alguns casos, para ocorrer a integração é necessário a chamada de uma API, em outros, as tecnologias precisam de uma comunicação assíncrona, necessitando de algo como mensagens ou eventos.
 
-![Imagem1.png](/.attachments/Imagem1-a13b67a9-a81f-4c2b-b22e-dcddaa465083.png)
 
 Todos os processos precisam de sua devida orquestração, ou seja, independente de tecnologia envolvidas na integração, é necessário um planejamento visando uma maneira simples de garantir os fluxos e execução do modelo de negócio.
 
-![Imagem2.png](/.attachments/Imagem2-c0effd4e-fbcb-4ca8-b09c-c169fb9d1fcd.png)
 
 Elementos técnicos que consistem na arquitetura:
 
@@ -35,7 +33,6 @@ O maior benefício dessa arquitetura é que se torna possível enxergar todas as
 
 Além de poder se relacionar com as demais arquiteturas com interdependência. Exige da organização conhecimento prévio das necessidades e requisitos de seu próprio negócio e todas as possíveis integrações.
 
-![Imagem3.png](/.attachments/Imagem3-a4597812-d07c-49af-a84f-3d6e5abedbdb.png)
 
 Empresas que aplicam cases de arquitetura de integração em suas soluções:
 

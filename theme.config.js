@@ -20,5 +20,4 @@ export default {
   readMore: 'Leia mais →',
   unstable_faviconGlyph: "👋",
   darkMode: true,
-  
 }

@@ -5,7 +5,5 @@ This portfolio is built with **Next.js** and a library called [Nextra](https://n
 # How to build and run 
 
 ```bash
-yarn build
-# then
-yarn start
+yarn dev
 ```

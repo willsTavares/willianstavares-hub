@@ -2,7 +2,7 @@
 title: 📃 O que é S.O.L.I.D?
 date: 2022/6/14
 description: Este artigo explora de forma acessível os fundamentos dessa abordagem para design de software. Aprenda e aplique esses princípios para um código mais robusto e flexível.
-tag: arquitetura de sofware, padrões de desenvolvimento
+tag: arquitetura de software, padrões de desenvolvimento
 ---
 
 # S.O.L.I.D

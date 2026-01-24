@@ -2,7 +2,7 @@
 title: 🎙️ Podcast - Clean Code
 date: 2021/9/03
 description: Nesse episódio conversaremos sobre Clean Code, sua importância e relevância no mercado. Vamos bater um papo sobre experiências reais da nossa equipe técnica no assunto.
-tag: podcast, desenvolvimento
+tag: podcast, padrões de desenvolvimento
 ---
 
 Nesse episódio conversaremos sobre Clean Code, sua importância e relevância no mercado. Vamos bater um papo sobre experiências reais da nossa equipe técnica no assunto.
@@ -23,4 +23,4 @@ Participantes
 - Eduardo Brandão 
 
 
-<iframe className="podcast" src="https://open.spotify.com/embed/episode/180zifPzCFpdwBVSQxDCnu?utm_source=generator&theme=0" width="100%" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe class="podcast" src="https://open.spotify.com/embed/episode/180zifPzCFpdwBVSQxDCnu?utm_source=generator&theme=0" width="100%" height="152" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

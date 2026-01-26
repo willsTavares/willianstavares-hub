@@ -21,7 +21,6 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
 
   return (
     <Layout title="Posts" description="Artigos e posts sobre desenvolvimento">
-      <h1>Posts</h1>
       <p className="page-description">
         Artigos sobre desenvolvimento de software, arquitetura, boas práticas e experiências 
         compartilhadas ao longo da minha jornada como desenvolvedor.
@@ -53,33 +52,34 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
       ) : (
         <div className="posts-list">
           {filteredPosts.map((post) => (
-            <article key={post.slug} className="post-card">
-              <Link href={`/posts/${post.slug}`}>
+            <Link key={post.slug} href={`/posts/${post.slug}`} className="post-card-link">
+              <article className="post-card">
                 <h2>{post.title}</h2>
-              </Link>
-              <time className="post-date">
-                {new Date(post.date).toLocaleDateString('pt-BR')}
-              </time>
-              {post.description && (
-                <p className="post-description">{post.description}</p>
-              )}
-              {post.tag && (
-                <div className="post-tags">
-                  {post.tag.split(',').map((tag) => (
-                    <span 
-                      key={tag.trim()} 
-                      className="tag clickable"
-                      onClick={() => setSelectedTag(tag.trim())}
-                    >
-                      {tag.trim()}
-                    </span>
-                  ))}
-                </div>
-              )}
-              <Link href={`/posts/${post.slug}`} className="read-more">
-                Leia mais →
-              </Link>
-            </article>
+                <time className="post-date">
+                  {new Date(post.date).toLocaleDateString('pt-BR')}
+                </time>
+                {post.description && (
+                  <p className="post-description">{post.description}</p>
+                )}
+                {post.tag && (
+                  <div className="post-tags">
+                    {post.tag.split(',').map((tag) => (
+                      <span 
+                        key={tag.trim()} 
+                        className="tag clickable"
+                        onClick={(e) => {
+                          e.preventDefault()
+                          setSelectedTag(tag.trim())
+                        }}
+                      >
+                        {tag.trim()}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <span className="read-more">Leia mais →</span>
+              </article>
+            </Link>
           ))}
         </div>
       )}

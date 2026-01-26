@@ -5,8 +5,6 @@ description: Aprenda a identificar, monitorar e gerenciar consultas em execuçã
 tag: banco de dados, postgresql, monitoria
 ---
 
-# Monitorando Consultas no PostgreSQL
-
 Você já se deparou com aquela situação onde o banco de dados está lento e você precisa descobrir qual consulta está causando o problema? Ou então precisou cancelar uma query que travou e está consumindo recursos do servidor? 
 
 Se você trabalha com PostgreSQL, conhecer as ferramentas de monitoramento de consultas é essencial. Neste artigo, vou compartilhar algumas técnicas que uso no dia a dia para identificar e gerenciar consultas em execução.

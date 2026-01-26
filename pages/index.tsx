@@ -31,7 +31,7 @@ export default function Home({ latestPost }: HomeProps) {
 
       {latestPost && (
         <section className="latest-post-section">
-          <h2 className="section-title">Última Atividade</h2>
+          <h2 className="section-title">Última atividade</h2>
           <Link href={`/posts/${latestPost.slug}`} className="post-card-link">
             <article className="post-card compact">
               <h3>{latestPost.title}</h3>

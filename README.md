@@ -1,6 +1,6 @@
 # Willians Tavares - Portfólio
 
-Portfólio pessoal e blog de Willians Tavares, Tech Lead na Konia Tecnologia.
+Portfólio pessoal e blog de Willians Tavares. 
 
 ## 🚀 Tecnologias
 

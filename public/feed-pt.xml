@@ -4,7 +4,7 @@
         <description><![CDATA[Willians Tavares]]></description>
         <link>https://willians-tavares.com/pt</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 19 Apr 2026 17:39:58 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Apr 2026 20:05:52 GMT</lastBuildDate>
         <atom:link href="https://willians-tavares.com/feed-pt.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[pt]]></language>
         <item>
@@ -33,12 +33,37 @@
             <pubDate>Thu, 27 Oct 2022 03:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[📺 Live - Tirando dúvidas sobre o início de carreira como Desenvolvedor!]]></title>
+            <description><![CDATA[Sessão de bate-papo ao vivo, com intuito de sanar suas dúvidas sobre o início de carreira como Desenvolvedor.]]></description>
+            <link>/pt/posts/live-talks-with-developers</link>
+            <guid isPermaLink="true">/pt/posts/live-talks-with-developers</guid>
+            <category><![CDATA[live]]></category>
+            <pubDate>Fri, 04 Nov 2022 03:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[📺 Live - Linguagens de programação (Tier List)]]></title>
             <description><![CDATA[Live sobre linguagens de programação no geral.]]></description>
             <link>/pt/posts/live-tier-language</link>
             <guid isPermaLink="true">/pt/posts/live-tier-language</guid>
             <category><![CDATA[live]]></category>
             <pubDate>Tue, 28 Dec 2021 03:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[🎙️Podcast - Contos de um Desenvolvedor e Planos de Estudos]]></title>
+            <description><![CDATA[Neste episódio conversaremos sobre o mundo de desenvolvimento e como montar ou se organizar para planejar um estudo de carreira, confira a conversa e compartilhe sua experiência conosco.]]></description>
+            <link>/pt/posts/podcast-konia1</link>
+            <guid isPermaLink="true">/pt/posts/podcast-konia1</guid>
+            <category><![CDATA[podcast]]></category>
+            <pubDate>Fri, 18 Jun 2021 03:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[🎙️ Podcast - Clean Code]]></title>
+            <description><![CDATA[Nesse episódio conversaremos sobre Clean Code, sua importância e relevância no mercado. Vamos bater um papo sobre experiências reais da nossa equipe técnica no assunto.]]></description>
+            <link>/pt/posts/podcast-konia2</link>
+            <guid isPermaLink="true">/pt/posts/podcast-konia2</guid>
+            <category><![CDATA[podcast]]></category>
+            <category><![CDATA[padrões de desenvolvimento]]></category>
+            <pubDate>Fri, 03 Sep 2021 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[🎙️Podcast - Ideias revolucionárias com o aumento da informação.]]></title>
@@ -48,14 +73,6 @@
             <category><![CDATA[podcast]]></category>
             <category><![CDATA[desenvolvimento]]></category>
             <pubDate>Wed, 26 Jan 2022 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[📺 Live - Tirando dúvidas sobre o início de carreira como Desenvolvedor!]]></title>
-            <description><![CDATA[Sessão de bate-papo ao vivo, com intuito de sanar suas dúvidas sobre o início de carreira como Desenvolvedor.]]></description>
-            <link>/pt/posts/live-talks-with-developers</link>
-            <guid isPermaLink="true">/pt/posts/live-talks-with-developers</guid>
-            <category><![CDATA[live]]></category>
-            <pubDate>Fri, 04 Nov 2022 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[Monitorando Consultas no PostgreSQL]]></title>
@@ -68,24 +85,6 @@
             <pubDate>Sun, 19 Oct 2025 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[O que é S.O.L.I.D?]]></title>
-            <description><![CDATA[Este artigo explora de forma acessível os fundamentos dessa abordagem para design de software. Aprenda e aplique esses princípios para um código mais robusto e flexível.]]></description>
-            <link>/pt/posts/solid</link>
-            <guid isPermaLink="true">/pt/posts/solid</guid>
-            <category><![CDATA[arquitetura de software]]></category>
-            <category><![CDATA[padrões de desenvolvimento]]></category>
-            <pubDate>Tue, 14 Jun 2022 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[🎙️ Podcast - Clean Code]]></title>
-            <description><![CDATA[Nesse episódio conversaremos sobre Clean Code, sua importância e relevância no mercado. Vamos bater um papo sobre experiências reais da nossa equipe técnica no assunto.]]></description>
-            <link>/pt/posts/podcast-konia2</link>
-            <guid isPermaLink="true">/pt/posts/podcast-konia2</guid>
-            <category><![CDATA[podcast]]></category>
-            <category><![CDATA[padrões de desenvolvimento]]></category>
-            <pubDate>Fri, 03 Sep 2021 03:00:00 GMT</pubDate>
-        </item>
-        <item>
             <title><![CDATA[Sobre Levantamento de Requisitos]]></title>
             <description><![CDATA[Nesse artigo darei algumas dicas e formas para levantar os requisitos necessários para o desenvolvimento de um sistema, o desenvolvimento desse documento acompanhará todas as etapas adjacentes do desenvolvimento por tanto é crucial entender as necessidades do usuário.]]></description>
             <link>/pt/posts/requirements</link>
@@ -94,12 +93,13 @@
             <pubDate>Fri, 18 Mar 2022 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[🎙️Podcast - Contos de um Desenvolvedor e Planos de Estudos]]></title>
-            <description><![CDATA[Neste episódio conversaremos sobre o mundo de desenvolvimento e como montar ou se organizar para planejar um estudo de carreira, confira a conversa e compartilhe sua experiência conosco.]]></description>
-            <link>/pt/posts/podcast-konia1</link>
-            <guid isPermaLink="true">/pt/posts/podcast-konia1</guid>
-            <category><![CDATA[podcast]]></category>
-            <pubDate>Fri, 18 Jun 2021 03:00:00 GMT</pubDate>
+            <title><![CDATA[O que é S.O.L.I.D?]]></title>
+            <description><![CDATA[Este artigo explora de forma acessível os fundamentos dessa abordagem para design de software. Aprenda e aplique esses princípios para um código mais robusto e flexível.]]></description>
+            <link>/pt/posts/solid</link>
+            <guid isPermaLink="true">/pt/posts/solid</guid>
+            <category><![CDATA[arquitetura de software]]></category>
+            <category><![CDATA[padrões de desenvolvimento]]></category>
+            <pubDate>Tue, 14 Jun 2022 03:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

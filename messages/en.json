@@ -5,16 +5,19 @@
   },
   "nav": {
     "home": "Home",
-    "posts": "Posts"
+    "posts": "Posts",
+    "projects": "Projects"
   },
   "home": {
     "intro1": "Hi, my name is Willians Tavares! I currently work as a Tech Lead at",
     "intro1Company": "Konia Tecnologia",
-    "intro2": "I'm passionate about development, with a solid background in .Net, Kotlin, and Javascript. My experience also covers DevOps and Cloud using environments like Azure, Azure DevOps, and AWS. 🚀",
+    "intro2": "I'm passionate about development, with a solid background in .Net, Kotlin, and Javascript. My experience also covers DevOps and Cloud using environments like Azure, Azure DevOps, and AWS.",
     "intro3": "My goal is to simplify complex solutions",
-    "intro3Rest": ", seeking efficient ways to solve the challenges that arise during project development. ✨",
+    "intro3Rest": ", seeking efficient ways to solve the challenges that arise during project development.",
     "latestActivity": "Latest activity",
-    "readMore": "Read more →"
+    "readMore": "Read more →",
+    "badgePost": "Article",
+    "badgeProject": "Project"
   },
   "posts": {
     "pageDescription": "Articles about software development, architecture, best practices, and experiences shared throughout my journey as a developer.",
@@ -39,5 +42,15 @@
     "title": "Page not found",
     "description": "The page you are looking for does not exist.",
     "backHome": "Back to home"
+  },
+  "projects": {
+    "title": "Projects",
+    "pageDescription": "Open-source projects and personal experiments I build in my spare time.",
+    "noProjects": "No projects found.",
+    "repository": "Repository",
+    "demo": "Demo",
+    "active": "Active",
+    "wip": "In progress",
+    "archived": "Archived"
   }
 }

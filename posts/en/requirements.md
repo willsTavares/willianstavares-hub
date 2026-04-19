@@ -1,5 +1,5 @@
 ---
-title: 📃 About Requirements Gathering
+title: About Requirements Gathering
 date: 2022/3/18
 description: In this article I'll share some tips and methods for gathering the necessary requirements for system development. This document will accompany all adjacent stages of development, so it's crucial to understand the user's needs.
 tag: development patterns

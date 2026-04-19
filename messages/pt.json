@@ -31,5 +31,13 @@
   },
   "footer": {
     "copyright": "© By Willians Tavares."
+  },
+  "post": {
+    "readingTime": "{minutes} min de leitura"
+  },
+  "notFound": {
+    "title": "Página não encontrada",
+    "description": "A página que você procura não existe.",
+    "backHome": "Voltar para o início"
   }
 }

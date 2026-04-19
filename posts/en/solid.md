@@ -1,5 +1,5 @@
 ---
-title: 📃 What is S.O.L.I.D?
+title: What is S.O.L.I.D?
 date: 2022/6/14
 description: This article explores in an accessible way the fundamentals of this approach to software design. Learn and apply these principles for more robust and flexible code.
 tag: software architecture, development patterns

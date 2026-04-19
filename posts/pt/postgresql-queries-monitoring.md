@@ -1,5 +1,5 @@
 ---
-title: 📃 Monitorando Consultas no PostgreSQL
+title: Monitorando Consultas no PostgreSQL
 date: 2025/10/19
 description: Aprenda a identificar, monitorar e gerenciar consultas em execução no PostgreSQL. Técnicas essenciais para manter a saúde do seu banco de dados.
 tag: banco de dados, postgresql, monitoria

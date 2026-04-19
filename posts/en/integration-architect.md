@@ -1,5 +1,5 @@
 ---
-title: 📃 Integration Architecture
+title: Integration Architecture
 date: 2023/1/02
 description: Integration architecture refers to the structure and design of systems that facilitate communication and interaction between different software components, systems, or applications.
 tag: software architecture

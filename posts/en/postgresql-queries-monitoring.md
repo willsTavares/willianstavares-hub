@@ -1,5 +1,5 @@
 ---
-title: 📃 Monitoring Queries in PostgreSQL
+title: Monitoring Queries in PostgreSQL
 date: 2025/10/19
 description: Learn how to identify, monitor, and manage running queries in PostgreSQL. Essential techniques for maintaining the health of your database.
 tag: databases, postgresql, monitoring

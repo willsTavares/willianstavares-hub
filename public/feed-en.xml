@@ -4,7 +4,7 @@
         <description><![CDATA[Willians Tavares]]></description>
         <link>https://willians-tavares.com/en</link>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Sun, 19 Apr 2026 17:39:58 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 19 Apr 2026 20:05:52 GMT</lastBuildDate>
         <atom:link href="https://willians-tavares.com/feed-en.xml" rel="self" type="application/rss+xml"/>
         <language><![CDATA[en]]></language>
         <item>
@@ -16,6 +16,15 @@
             <pubDate>Fri, 18 Aug 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
+            <title><![CDATA[📺 Live - Hello Kotlin | Learn Development on the Android Platform using Kotlin and Android Studio]]></title>
+            <description><![CDATA[In this live session we presented the main features of the most widely used language for Android app development.]]></description>
+            <link>/en/posts/live-hello-kotlin</link>
+            <guid isPermaLink="true">/en/posts/live-hello-kotlin</guid>
+            <category><![CDATA[live]]></category>
+            <category><![CDATA[development]]></category>
+            <pubDate>Thu, 27 Oct 2022 03:00:00 GMT</pubDate>
+        </item>
+        <item>
             <title><![CDATA[Integration Architecture]]></title>
             <description><![CDATA[Integration architecture refers to the structure and design of systems that facilitate communication and interaction between different software components, systems, or applications.]]></description>
             <link>/en/posts/integration-architect</link>
@@ -24,13 +33,28 @@
             <pubDate>Mon, 02 Jan 2023 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[📺 Live - Hello Kotlin | Learn Development on the Android Platform using Kotlin and Android Studio]]></title>
-            <description><![CDATA[In this live session we presented the main features of the most widely used language for Android app development.]]></description>
-            <link>/en/posts/live-hello-kotlin</link>
-            <guid isPermaLink="true">/en/posts/live-hello-kotlin</guid>
+            <title><![CDATA[📺 Live - Answering Questions About Starting a Career as a Developer!]]></title>
+            <description><![CDATA[Live chat session aimed at answering your questions about starting a career as a Developer.]]></description>
+            <link>/en/posts/live-talks-with-developers</link>
+            <guid isPermaLink="true">/en/posts/live-talks-with-developers</guid>
             <category><![CDATA[live]]></category>
-            <category><![CDATA[development]]></category>
-            <pubDate>Thu, 27 Oct 2022 03:00:00 GMT</pubDate>
+            <pubDate>Fri, 04 Nov 2022 03:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[📺 Live - Programming Languages (Tier List)]]></title>
+            <description><![CDATA[Live about programming languages in general.]]></description>
+            <link>/en/posts/live-tier-language</link>
+            <guid isPermaLink="true">/en/posts/live-tier-language</guid>
+            <category><![CDATA[live]]></category>
+            <pubDate>Tue, 28 Dec 2021 03:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[🎙️ Podcast - Tales of a Developer and Study Plans]]></title>
+            <description><![CDATA[In this episode we'll talk about the development world and how to set up or organize yourself to plan a career study, check out the conversation and share your experience with us.]]></description>
+            <link>/en/posts/podcast-konia1</link>
+            <guid isPermaLink="true">/en/posts/podcast-konia1</guid>
+            <category><![CDATA[podcast]]></category>
+            <pubDate>Fri, 18 Jun 2021 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[🎙️ Podcast - Clean Code]]></title>
@@ -42,20 +66,13 @@
             <pubDate>Fri, 03 Sep 2021 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[📺 Live - Programming Languages (Tier List)]]></title>
-            <description><![CDATA[Live about programming languages in general.]]></description>
-            <link>/en/posts/live-tier-language</link>
-            <guid isPermaLink="true">/en/posts/live-tier-language</guid>
-            <category><![CDATA[live]]></category>
-            <pubDate>Tue, 28 Dec 2021 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[📺 Live - Answering Questions About Starting a Career as a Developer!]]></title>
-            <description><![CDATA[Live chat session aimed at answering your questions about starting a career as a Developer.]]></description>
-            <link>/en/posts/live-talks-with-developers</link>
-            <guid isPermaLink="true">/en/posts/live-talks-with-developers</guid>
-            <category><![CDATA[live]]></category>
-            <pubDate>Fri, 04 Nov 2022 03:00:00 GMT</pubDate>
+            <title><![CDATA[🎙️ Podcast - Revolutionary Ideas with the Increase of Information]]></title>
+            <description><![CDATA[In this episode we'll discuss how the increase of information has made revolutionary ideas more and more frequent.]]></description>
+            <link>/en/posts/podcast-konia3</link>
+            <guid isPermaLink="true">/en/posts/podcast-konia3</guid>
+            <category><![CDATA[podcast]]></category>
+            <category><![CDATA[development]]></category>
+            <pubDate>Wed, 26 Jan 2022 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[About Requirements Gathering]]></title>
@@ -64,16 +81,6 @@
             <guid isPermaLink="true">/en/posts/requirements</guid>
             <category><![CDATA[development patterns]]></category>
             <pubDate>Fri, 18 Mar 2022 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[Monitoring Queries in PostgreSQL]]></title>
-            <description><![CDATA[Learn how to identify, monitor, and manage running queries in PostgreSQL. Essential techniques for maintaining the health of your database.]]></description>
-            <link>/en/posts/postgresql-queries-monitoring</link>
-            <guid isPermaLink="true">/en/posts/postgresql-queries-monitoring</guid>
-            <category><![CDATA[databases]]></category>
-            <category><![CDATA[postgresql]]></category>
-            <category><![CDATA[monitoring]]></category>
-            <pubDate>Sun, 19 Oct 2025 03:00:00 GMT</pubDate>
         </item>
         <item>
             <title><![CDATA[What is S.O.L.I.D?]]></title>
@@ -85,21 +92,14 @@
             <pubDate>Tue, 14 Jun 2022 03:00:00 GMT</pubDate>
         </item>
         <item>
-            <title><![CDATA[🎙️ Podcast - Tales of a Developer and Study Plans]]></title>
-            <description><![CDATA[In this episode we'll talk about the development world and how to set up or organize yourself to plan a career study, check out the conversation and share your experience with us.]]></description>
-            <link>/en/posts/podcast-konia1</link>
-            <guid isPermaLink="true">/en/posts/podcast-konia1</guid>
-            <category><![CDATA[podcast]]></category>
-            <pubDate>Fri, 18 Jun 2021 03:00:00 GMT</pubDate>
-        </item>
-        <item>
-            <title><![CDATA[🎙️ Podcast - Revolutionary Ideas with the Increase of Information]]></title>
-            <description><![CDATA[In this episode we'll discuss how the increase of information has made revolutionary ideas more and more frequent.]]></description>
-            <link>/en/posts/podcast-konia3</link>
-            <guid isPermaLink="true">/en/posts/podcast-konia3</guid>
-            <category><![CDATA[podcast]]></category>
-            <category><![CDATA[development]]></category>
-            <pubDate>Wed, 26 Jan 2022 03:00:00 GMT</pubDate>
+            <title><![CDATA[Monitoring Queries in PostgreSQL]]></title>
+            <description><![CDATA[Learn how to identify, monitor, and manage running queries in PostgreSQL. Essential techniques for maintaining the health of your database.]]></description>
+            <link>/en/posts/postgresql-queries-monitoring</link>
+            <guid isPermaLink="true">/en/posts/postgresql-queries-monitoring</guid>
+            <category><![CDATA[databases]]></category>
+            <category><![CDATA[postgresql]]></category>
+            <category><![CDATA[monitoring]]></category>
+            <pubDate>Sun, 19 Oct 2025 03:00:00 GMT</pubDate>
         </item>
     </channel>
 </rss>

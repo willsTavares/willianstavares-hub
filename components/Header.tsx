@@ -23,6 +23,9 @@ export default function Header() {
         <Link href="/posts" className={`nav-link ${isActive('/posts') ? 'active' : ''}`}>
           {t('posts')}
         </Link>
+        <Link href="/projects" className={`nav-link ${isActive('/projects') ? 'active' : ''}`}>
+          {t('projects')}
+        </Link>
       </nav>
     </header>
   )

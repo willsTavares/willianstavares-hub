@@ -1,23 +1,48 @@
 import Layout from '../../components/Layout'
-import ShareButtons from '../../components/ShareButtons'
-import { getPostBySlug, getPostSlugs, Post } from '../../lib/posts'
+import Link from 'next/link'
+import { getPostBySlug, getAllLocalePostPaths, Post } from '../../lib/posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
+import { useRouter } from 'next/router'
+import { useTranslations } from 'next-intl'
+
+function getReadingTime(content: string): number {
+  const words = content.trim().split(/\s+/).length
+  return Math.max(1, Math.ceil(words / 200))
+}
 
 interface PostPageProps {
   post: Post
 }
 
 export default function PostPage({ post }: PostPageProps) {
+  const router = useRouter()
+  const t = useTranslations('post')
+  const tNav = useTranslations('nav')
+  const dateLocale = router.locale === 'pt' ? 'pt-BR' : 'en-US'
+  const readingTime = getReadingTime(post.content)
+
   return (
-    <Layout title={post.title} description={post.description}>
+    <Layout title={post.title} description={post.description} ogType="article">
+      <nav className="breadcrumb" aria-label="Breadcrumb">
+        <Link href="/">{tNav('home')}</Link>
+        <span className="breadcrumb-separator">/</span>
+        <Link href="/posts">{tNav('posts')}</Link>
+        <span className="breadcrumb-separator">/</span>
+        <span className="breadcrumb-current">{post.title}</span>
+      </nav>
       <article className="post-content">
         <header className="post-header">
           <h1>{post.title}</h1>
-          <time className="post-date">
-            {new Date(post.date).toLocaleDateString('pt-BR')}
-          </time>
+          <div className="post-meta">
+            <time className="post-date">
+              {new Date(post.date).toLocaleDateString(dateLocale)}
+            </time>
+            <span className="separator">&middot;</span>
+            <span className="reading-time">{t('readingTime', { minutes: readingTime })}</span>
+          </div>
           {post.tag && (
             <div className="post-tags">
               {post.tag.split(',').map((tag) => (
@@ -27,13 +52,15 @@ export default function PostPage({ post }: PostPageProps) {
               ))}
             </div>
           )}
-          {/* <ShareButtons title={post.title} /> */}
         </header>
         
         <div className="prose">
           <ReactMarkdown 
             remarkPlugins={[remarkGfm]}
+            rehypePlugins={[rehypeRaw]}
             components={{
+              // @ts-expect-error Bleed is a custom MDX tag used in some posts
+              bleed: ({ children }) => <div className="bleed">{children}</div>,
               img: ({ src, alt }) => (
                 <img 
                   src={src?.startsWith('/') ? src : `/images/${src}`} 
@@ -64,11 +91,8 @@ export default function PostPage({ post }: PostPageProps) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = getPostSlugs()
-  const paths = slugs.map((slug) => ({
-    params: { slug: slug.replace(/\.md$/, '') },
-  }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths = getAllLocalePostPaths(locales || ['pt', 'en'])
 
   return {
     paths,
@@ -76,11 +100,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params?.slug as string)
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  const post = getPostBySlug(params?.slug as string, locale || 'pt')
   return {
     props: {
       post,
+      messages: (await import(`../../messages/${locale || 'pt'}.json`)).default,
     },
   }
 }

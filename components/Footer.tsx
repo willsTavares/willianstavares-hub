@@ -1,5 +1,8 @@
+import { useTranslations } from 'next-intl'
+
 export default function Footer() {
   const year = new Date().getFullYear()
+  const t = useTranslations('footer')
   
   return (
     <footer className="footer">
@@ -15,7 +18,7 @@ export default function Footer() {
         </a>
       </div>
       <small>
-        <time>{year}</time> © By Willians Tavares.
+        <time>{year}</time> {t('copyright')}
       </small>
     </footer>
   )

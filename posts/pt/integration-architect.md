@@ -1,5 +1,5 @@
 ---
-title: 📃 Arquitetura de Integração
+title: Arquitetura de Integração
 date: 2023/1/02
 description: A arquitetura de integração refere-se à estrutura e design de sistemas que facilitam a comunicação e a interação entre diferentes componentes de software, sistemas ou aplicações.
 tag: arquitetura de software

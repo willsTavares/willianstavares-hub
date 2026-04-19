@@ -3,6 +3,8 @@ import Link from 'next/link'
 import { getAllPosts, Post } from '../../lib/posts'
 import { GetStaticProps } from 'next'
 import { useState, useMemo } from 'react'
+import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/router'
 
 interface PostsPageProps {
   posts: Post[]
@@ -11,6 +13,10 @@ interface PostsPageProps {
 
 export default function PostsPage({ posts, allTags }: PostsPageProps) {
   const [selectedTag, setSelectedTag] = useState<string | null>(null)
+  const t = useTranslations('posts')
+  const tNav = useTranslations('nav')
+  const router = useRouter()
+  const dateLocale = router.locale === 'pt' ? 'pt-BR' : 'en-US'
 
   const filteredPosts = useMemo(() => {
     if (!selectedTag) return posts
@@ -20,20 +26,19 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
   }, [posts, selectedTag])
 
   return (
-    <Layout title="Posts" description="Artigos e posts sobre desenvolvimento">
+    <Layout title={tNav('posts')} description={t('pageDescription')}>
       <p className="page-description">
-        Artigos sobre desenvolvimento de software, arquitetura, boas práticas e experiências 
-        compartilhadas ao longo da minha jornada como desenvolvedor.
+        {t('pageDescription')}
       </p>
 
       <div className="tags-filter">
-        <span className="filter-label">Filtrar por tag:</span>
+        <span className="filter-label">{t('filterByTag')}</span>
         <div className="tags-list">
           <button 
             className={`tag-filter ${!selectedTag ? 'active' : ''}`}
             onClick={() => setSelectedTag(null)}
           >
-            Todos
+            {t('all')}
           </button>
           {allTags.map((tag) => (
             <button
@@ -48,7 +53,7 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
       </div>
 
       {filteredPosts.length === 0 ? (
-        <p className="no-posts">Nenhum post encontrado com essa tag.</p>
+        <p className="no-posts">{t('noPostsFound')}</p>
       ) : (
         <div className="posts-list">
           {filteredPosts.map((post) => (
@@ -56,7 +61,7 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
               <article className="post-card">
                 <h2>{post.title}</h2>
                 <time className="post-date">
-                  {new Date(post.date).toLocaleDateString('pt-BR')}
+                  {new Date(post.date).toLocaleDateString(dateLocale)}
                 </time>
                 {post.description && (
                   <p className="post-description">{post.description}</p>
@@ -77,7 +82,7 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
                     ))}
                   </div>
                 )}
-                <span className="read-more">Leia mais →</span>
+                <span className="read-more">{t('readMore')}</span>
               </article>
             </Link>
           ))}
@@ -87,10 +92,9 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts()
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const posts = getAllPosts(locale || 'pt')
   
-  // Extrair todas as tags únicas
   const tagsSet = new Set<string>()
   posts.forEach((post) => {
     if (post.tag) {
@@ -105,6 +109,7 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       posts,
       allTags,
+      messages: (await import(`../../messages/${locale || 'pt'}.json`)).default,
     },
   }
 }

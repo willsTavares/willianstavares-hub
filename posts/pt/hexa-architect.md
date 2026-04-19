@@ -1,5 +1,5 @@
 ---
-title: 📃 Arquitetura Hexagonal
+title: Arquitetura Hexagonal
 date: 2023/8/18
 description: Descubra como a Arquitetura Hexagonal transforma o design de software, trazendo benefícios práticos para seu projeto. Explore sua eficácia e aplicação neste estudo aprofundado.
 tag: arquitetura de software

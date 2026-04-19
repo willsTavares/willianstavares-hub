@@ -1,9 +1,13 @@
+import { useTranslations } from 'next-intl'
+
 interface ShareButtonsProps {
   title: string
   url?: string
 }
 
 export default function ShareButtons({ title, url }: ShareButtonsProps) {
+  const t = useTranslations('share')
+
   const getShareUrl = () => {
     if (typeof window === 'undefined') return ''
     return url || window.location.href
@@ -31,16 +35,16 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
       color: '#25D366',
     },
     {
-      name: 'Copiar Link',
+      name: t('copyLink'),
       icon: '🔗',
       getUrl: () => '',
       color: '#666',
       action: async () => {
         try {
           await navigator.clipboard.writeText(getShareUrl())
-          alert('Link copiado!')
+          alert(t('linkCopied'))
         } catch {
-          alert('Não foi possível copiar o link')
+          alert(t('copyError'))
         }
       },
     },
@@ -56,7 +60,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
 
   return (
     <div className="share-buttons">
-      <span className="share-label">Compartilhar:</span>
+      <span className="share-label">{t('label')}</span>
       <div className="share-icons">
         {shareLinks.map((link) => (
           <button

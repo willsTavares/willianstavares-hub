@@ -2,41 +2,45 @@ import Layout from '../components/Layout'
 import Link from 'next/link'
 import { getAllPosts, Post } from '../lib/posts'
 import { GetStaticProps } from 'next'
+import { useTranslations } from 'next-intl'
+import { useRouter } from 'next/router'
 
 interface HomeProps {
   latestPost: Post | null
 }
 
 export default function Home({ latestPost }: HomeProps) {
+  const t = useTranslations('home')
+  const router = useRouter()
+  const dateLocale = router.locale === 'pt' ? 'pt-BR' : 'en-US'
+
   return (
     <Layout>      
       <p>
-        Olá, me chamo Willians Tavares! Atualmente atuo como Tech Lead na{' '}
+        {t('intro1')}{' '}
         <a href="https://konia.com.br/" target="_blank" rel="noopener noreferrer">
-          Konia Tecnologia
+          {t('intro1Company')}
         </a>
         .
       </p>
       
       <p>
-        Sou apaixonado por desenvolvimento, tenho uma base sólida em .Net, Kotlin e Javascript. 
-        Minha experiência também abrange DevOps e Cloud utilizando ambientes como Azure, 
-        Azure Devops e AWS. 🚀
+        {t('intro2')}
       </p>
       
       <p>
-        <strong>Meu objetivo é simplificar soluções complexas</strong>, buscando formas 
-        eficientes de resolver os desafios que surgem durante o desenvolvimento dos projetos. ✨
+        <strong>{t('intro3')}</strong>
+        {t('intro3Rest')}
       </p>
 
       {latestPost && (
         <section className="latest-post-section">
-          <h2 className="section-title">Última atividade</h2>
+          <h2 className="section-title">{t('latestActivity')}</h2>
           <Link href={`/posts/${latestPost.slug}`} className="post-card-link">
             <article className="post-card compact">
               <h3>{latestPost.title}</h3>
               <time className="post-date">
-                {new Date(latestPost.date).toLocaleDateString('pt-BR')}
+                {new Date(latestPost.date).toLocaleDateString(dateLocale)}
               </time>
               {latestPost.description && (
                 <p className="post-description">{latestPost.description}</p>
@@ -50,7 +54,7 @@ export default function Home({ latestPost }: HomeProps) {
                   ))}
                 </div>
               )}
-              <span className="read-more">Leia mais →</span>
+              <span className="read-more">{t('readMore')}</span>
             </article>
           </Link>
         </section>
@@ -59,13 +63,14 @@ export default function Home({ latestPost }: HomeProps) {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const posts = getAllPosts()
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  const posts = getAllPosts(locale || 'pt')
   const latestPost = posts.length > 0 ? posts[0] : null
 
   return {
     props: {
       latestPost,
+      messages: (await import(`../messages/${locale || 'pt'}.json`)).default,
     },
   }
 }

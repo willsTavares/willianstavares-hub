@@ -1,5 +1,5 @@
 ---
-title: 📃 Sobre Levantamento de Requisitos
+title: Sobre Levantamento de Requisitos
 date: 2022/3/18
 description: Nesse artigo darei algumas dicas e formas para levantar os requisitos necessários para o desenvolvimento de um sistema, o desenvolvimento desse documento acompanhará todas as etapas adjacentes do desenvolvimento por tanto é crucial entender as necessidades do usuário.
 tag: padrões de desenvolvimento 

@@ -1,0 +1,43 @@
+{
+  "site": {
+    "title": "Willians Tavares",
+    "description": "This is my hub."
+  },
+  "nav": {
+    "home": "Home",
+    "posts": "Posts"
+  },
+  "home": {
+    "intro1": "Hi, my name is Willians Tavares! I currently work as a Tech Lead at",
+    "intro1Company": "Konia Tecnologia",
+    "intro2": "I'm passionate about development, with a solid background in .Net, Kotlin, and Javascript. My experience also covers DevOps and Cloud using environments like Azure, Azure DevOps, and AWS. 🚀",
+    "intro3": "My goal is to simplify complex solutions",
+    "intro3Rest": ", seeking efficient ways to solve the challenges that arise during project development. ✨",
+    "latestActivity": "Latest activity",
+    "readMore": "Read more →"
+  },
+  "posts": {
+    "pageDescription": "Articles about software development, architecture, best practices, and experiences shared throughout my journey as a developer.",
+    "filterByTag": "Filter by tag:",
+    "all": "All",
+    "noPostsFound": "No posts found with this tag.",
+    "readMore": "Read more →"
+  },
+  "share": {
+    "label": "Share:",
+    "copyLink": "Copy Link",
+    "linkCopied": "Link copied!",
+    "copyError": "Could not copy the link"
+  },
+  "footer": {
+    "copyright": "© By Willians Tavares."
+  },
+  "post": {
+    "readingTime": "{minutes} min read"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "description": "The page you are looking for does not exist.",
+    "backHome": "Back to home"
+  }
+}

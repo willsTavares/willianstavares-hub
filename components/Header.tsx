@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useTranslations } from 'next-intl'
 
 export default function Header() {
   const router = useRouter()
+  const t = useTranslations('nav')
 
   const isActive = (path: string) => {
     if (path === '/') return router.pathname === '/'
@@ -16,10 +18,10 @@ export default function Header() {
       </Link>
       <nav className="nav">
         <Link href="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
-          Home
+          {t('home')}
         </Link>
         <Link href="/posts" className={`nav-link ${isActive('/posts') ? 'active' : ''}`}>
-          Posts
+          {t('posts')}
         </Link>
       </nav>
     </header>

@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Header from './Header'
 import Footer from './Footer'
 import { ReactNode } from 'react'
+import { useRouter } from 'next/router'
+import { useTranslations } from 'next-intl'
 
 interface LayoutProps {
   children: ReactNode
@@ -10,8 +12,12 @@ interface LayoutProps {
 }
 
 export default function Layout({ children, title, description }: LayoutProps) {
-  const pageTitle = title ? `${title} - Willians Tavares` : 'Willians Tavares'
-  const pageDescription = description || 'This is my hub.'
+  const router = useRouter()
+  const t = useTranslations('site')
+  const siteTitle = t('title')
+  const pageTitle = title ? `${title} - ${siteTitle}` : siteTitle
+  const pageDescription = description || t('description')
+  const otherLocale = router.locale === 'pt' ? 'en' : 'pt'
 
   return (
     <>
@@ -19,9 +25,11 @@ export default function Layout({ children, title, description }: LayoutProps) {
         <title>{pageTitle}</title>
         <meta name="description" content={pageDescription} />
         <meta name="robots" content="follow, index" />
-        <meta property="og:site_name" content="Willians Tavares" />
+        <meta property="og:site_name" content={siteTitle} />
         <meta property="og:description" content={pageDescription} />
         <meta property="og:title" content={pageTitle} />
+        <link rel="alternate" hrefLang={router.locale} href={router.asPath} />
+        <link rel="alternate" hrefLang={otherLocale} href={`/${otherLocale}${router.asPath}`} />
         <link
           rel="alternate"
           type="application/rss+xml"

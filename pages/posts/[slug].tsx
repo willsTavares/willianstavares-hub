@@ -1,22 +1,26 @@
 import Layout from '../../components/Layout'
 import ShareButtons from '../../components/ShareButtons'
-import { getPostBySlug, getPostSlugs, Post } from '../../lib/posts'
+import { getPostBySlug, getAllLocalePostPaths, Post } from '../../lib/posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { useRouter } from 'next/router'
 
 interface PostPageProps {
   post: Post
 }
 
 export default function PostPage({ post }: PostPageProps) {
+  const router = useRouter()
+  const dateLocale = router.locale === 'pt' ? 'pt-BR' : 'en-US'
+
   return (
     <Layout title={post.title} description={post.description}>
       <article className="post-content">
         <header className="post-header">
           <h1>{post.title}</h1>
           <time className="post-date">
-            {new Date(post.date).toLocaleDateString('pt-BR')}
+            {new Date(post.date).toLocaleDateString(dateLocale)}
           </time>
           {post.tag && (
             <div className="post-tags">
@@ -64,11 +68,8 @@ export default function PostPage({ post }: PostPageProps) {
   )
 }
 
-export const getStaticPaths: GetStaticPaths = async () => {
-  const slugs = getPostSlugs()
-  const paths = slugs.map((slug) => ({
-    params: { slug: slug.replace(/\.md$/, '') },
-  }))
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths = getAllLocalePostPaths(locales || ['pt', 'en'])
 
   return {
     paths,
@@ -76,11 +77,12 @@ export const getStaticPaths: GetStaticPaths = async () => {
   }
 }
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const post = getPostBySlug(params?.slug as string)
+export const getStaticProps: GetStaticProps = async ({ params, locale }) => {
+  const post = getPostBySlug(params?.slug as string, locale || 'pt')
   return {
     props: {
       post,
+      messages: (await import(`../../messages/${locale || 'pt'}.json`)).default,
     },
   }
 }

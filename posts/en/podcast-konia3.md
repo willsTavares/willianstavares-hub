@@ -9,10 +9,10 @@ In this episode we'll discuss how the increase of information has made revolutio
 
 Topics
 
-* Introduction;
-* Communication and Information in the past, Connection Between PEOPLE;
-* How technological revolutionary ideas came about and their impacts;
-* How ideas are today and how they may become in the future in society.
+- Introduction;
+- Communication and Information in the past, Connection Between PEOPLE;
+- How technological revolutionary ideas came about and their impacts;
+- How ideas are today and how they may become in the future in society.
 
 Participants
 

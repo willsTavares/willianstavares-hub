@@ -42,13 +42,12 @@ export default function Layout({ children, title, description, ogType = 'website
         <meta name="twitter:description" content={pageDescription} />
         {/* Alternates */}
         <link rel="alternate" hrefLang={router.locale || 'pt'} href={canonicalUrl} />
-        <link rel="alternate" hrefLang={otherLocale} href={`${SITE_URL}/${otherLocale}${router.asPath}`} />
         <link
           rel="alternate"
-          type="application/rss+xml"
-          title="RSS"
-          href="/feed.xml"
+          hrefLang={otherLocale}
+          href={`${SITE_URL}/${otherLocale}${router.asPath}`}
         />
+        <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
         <link
           rel="preload"
           href="/fonts/Inter-roman.latin.var.woff2"
@@ -57,7 +56,9 @@ export default function Layout({ children, title, description, ogType = 'website
           crossOrigin="anonymous"
         />
       </Head>
-      <a href="#main-content" className="skip-to-content">Skip to content</a>
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
       <div className="container">
         <Header />
         <main id="main-content" className="main-content">

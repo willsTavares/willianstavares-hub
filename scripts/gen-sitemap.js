@@ -9,9 +9,10 @@ const defaultLocale = 'pt'
 function getPostSlugs(locale) {
   const dir = path.join(process.cwd(), 'posts', locale)
   if (!fs.existsSync(dir)) return []
-  return fs.readdirSync(dir)
-    .filter(f => f.endsWith('.md') && !f.startsWith('index'))
-    .map(f => f.replace(/\.md$/, ''))
+  return fs
+    .readdirSync(dir)
+    .filter((f) => f.endsWith('.md') && !f.startsWith('index'))
+    .map((f) => f.replace(/\.md$/, ''))
 }
 
 function generateSitemap() {
@@ -23,11 +24,15 @@ function generateSitemap() {
   for (const page of staticPages) {
     for (const locale of locales) {
       const loc = locale === defaultLocale ? `${SITE_URL}${page}` : `${SITE_URL}/${locale}${page}`
-      const alternates = locales.map(l => {
-        const href = l === defaultLocale ? `${SITE_URL}${page}` : `${SITE_URL}/${l}${page}`
-        return `    <xhtml:link rel="alternate" hreflang="${l}" href="${href}" />`
-      }).join('\n')
-      urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n${alternates}\n  </url>`)
+      const alternates = locales
+        .map((l) => {
+          const href = l === defaultLocale ? `${SITE_URL}${page}` : `${SITE_URL}/${l}${page}`
+          return `    <xhtml:link rel="alternate" hreflang="${l}" href="${href}" />`
+        })
+        .join('\n')
+      urls.push(
+        `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n${alternates}\n  </url>`
+      )
     }
   }
 
@@ -35,18 +40,22 @@ function generateSitemap() {
   for (const locale of locales) {
     const slugs = getPostSlugs(locale)
     for (const slug of slugs) {
-      const loc = locale === defaultLocale
-        ? `${SITE_URL}/posts/${slug}`
-        : `${SITE_URL}/${locale}/posts/${slug}`
-
-      const alternates = locales.map(l => {
-        const href = l === defaultLocale
+      const loc =
+        locale === defaultLocale
           ? `${SITE_URL}/posts/${slug}`
-          : `${SITE_URL}/${l}/posts/${slug}`
-        return `    <xhtml:link rel="alternate" hreflang="${l}" href="${href}" />`
-      }).join('\n')
+          : `${SITE_URL}/${locale}/posts/${slug}`
 
-      urls.push(`  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n${alternates}\n  </url>`)
+      const alternates = locales
+        .map((l) => {
+          const href =
+            l === defaultLocale ? `${SITE_URL}/posts/${slug}` : `${SITE_URL}/${l}/posts/${slug}`
+          return `    <xhtml:link rel="alternate" hreflang="${l}" href="${href}" />`
+        })
+        .join('\n')
+
+      urls.push(
+        `  <url>\n    <loc>${loc}</loc>\n    <lastmod>${now}</lastmod>\n${alternates}\n  </url>`
+      )
     }
   }
 

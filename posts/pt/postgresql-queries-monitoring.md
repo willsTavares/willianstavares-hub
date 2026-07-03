@@ -5,7 +5,7 @@ description: Aprenda a identificar, monitorar e gerenciar consultas em execuçã
 tag: banco de dados, postgresql, monitoria
 ---
 
-Você já se deparou com aquela situação onde o banco de dados está lento e você precisa descobrir qual consulta está causando o problema? Ou então precisou cancelar uma query que travou e está consumindo recursos do servidor? 
+Você já se deparou com aquela situação onde o banco de dados está lento e você precisa descobrir qual consulta está causando o problema? Ou então precisou cancelar uma query que travou e está consumindo recursos do servidor?
 
 Se você trabalha com PostgreSQL, conhecer as ferramentas de monitoramento de consultas é essencial. Neste artigo, vou compartilhar algumas técnicas que uso no dia a dia para identificar e gerenciar consultas em execução.
 
@@ -18,9 +18,9 @@ O PostgreSQL possui uma view chamada `pg_stat_activity` que é uma verdadeira m�
 Para ver todas as queries que estão rodando neste momento, você pode usar:
 
 ```sql
-SELECT pid, usename, query_start, state, query 
-FROM pg_stat_activity 
-WHERE state = 'active' 
+SELECT pid, usename, query_start, state, query
+FROM pg_stat_activity
+WHERE state = 'active'
   AND pid <> pg_backend_pid();
 ```
 
@@ -31,16 +31,16 @@ O filtro `pid <> pg_backend_pid()` serve para excluir a própria consulta que es
 Uma das situações mais comuns é precisar encontrar aquela consulta que está demorando mais do que deveria. Para isso, podemos ordenar pelo tempo de execução:
 
 ```sql
-SELECT 
-    pid, 
-    usename, 
-    query_start, 
-    now() - query_start AS duration, 
-    state, 
-    query 
-FROM pg_stat_activity 
-WHERE state = 'active' 
-  AND pid <> pg_backend_pid() 
+SELECT
+    pid,
+    usename,
+    query_start,
+    now() - query_start AS duration,
+    state,
+    query
+FROM pg_stat_activity
+WHERE state = 'active'
+  AND pid <> pg_backend_pid()
 ORDER BY duration DESC;
 ```
 
@@ -49,16 +49,16 @@ ORDER BY duration DESC;
 Se você quer ver apenas as consultas que estão rodando há mais de um minuto (geralmente um sinal de alerta), use:
 
 ```sql
-SELECT 
-    pid, 
-    usename, 
-    query_start, 
-    now() - query_start AS duration, 
-    state, 
-    query 
-FROM pg_stat_activity 
-WHERE state = 'active' 
-  AND now() - query_start > interval '1 minute' 
+SELECT
+    pid,
+    usename,
+    query_start,
+    now() - query_start AS duration,
+    state,
+    query
+FROM pg_stat_activity
+WHERE state = 'active'
+  AND now() - query_start > interval '1 minute'
 ORDER BY duration DESC;
 ```
 
@@ -91,9 +91,9 @@ SELECT pg_terminate_backend(12345);
 Uma prática que adotei em projetos é adicionar comentários identificadores nas queries da aplicação. Isso facilita muito na hora de rastrear qual parte do sistema está gerando determinada consulta:
 
 ```sql
-SELECT pid, usename, query_start, state, query 
-FROM pg_stat_activity 
-WHERE query ILIKE '%/* ModuloPedidos */%' 
+SELECT pid, usename, query_start, state, query
+FROM pg_stat_activity
+WHERE query ILIKE '%/* ModuloPedidos */%'
   AND state = 'active';
 ```
 

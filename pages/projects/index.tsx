@@ -1,11 +1,8 @@
 import Layout from '../../components/Layout'
+import Reveal from '../../components/Reveal'
 import { GetStaticProps } from 'next'
 import { useTranslations } from 'next-intl'
 import { getAllProjects, Project } from '../../lib/projects'
-
-function StatusBadge({ status, t }: { status: Project['status']; t: (key: string) => string }) {
-  return <span className={`project-status status-${status}`}>{t(status)}</span>
-}
 
 export default function ProjectsPage({ projects }: { projects: Project[] }) {
   const t = useTranslations('projects')
@@ -18,31 +15,45 @@ export default function ProjectsPage({ projects }: { projects: Project[] }) {
         <p className="no-posts">{t('noProjects')}</p>
       ) : (
         <div className="projects-grid">
-          {projects.map((project) => (
-            <article key={project.title} className="project-card">
-              <div className="project-card-header">
-                <h2>{project.title}</h2>
-                <StatusBadge status={project.status} t={t} />
-              </div>
+          {projects.map((project, index) => (
+            <Reveal
+              key={project.title}
+              as="article"
+              className="project-card"
+              delay={Math.min(index * 0.07, 0.28)}
+            >
+              <h2>{project.title}</h2>
               <p className="project-description">{project.description}</p>
               <div className="project-tags">
                 {project.tags.map((tag) => (
-                  <span key={tag} className="tag project-tag">{tag}</span>
+                  <span key={tag} className="tag project-tag">
+                    {tag}
+                  </span>
                 ))}
               </div>
               <div className="project-links">
                 {project.repo && (
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className="project-link">
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link"
+                  >
                     {t('repository')} →
                   </a>
                 )}
                 {project.demo && (
-                  <a href={project.demo} target="_blank" rel="noopener noreferrer" className="project-link demo">
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link demo"
+                  >
                     {t('demo')} →
                   </a>
                 )}
               </div>
-            </article>
+            </Reveal>
           ))}
         </div>
       )}

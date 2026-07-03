@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Willians Tavares",
-    "description": "Este é meu hub."
+    "description": "Tech Lead & Desenvolvedor Full-Stack especializado em .NET, Kotlin e React/TypeScript, com experiência em arquitetura de software, DevOps e cloud."
   },
   "nav": {
     "home": "Home",
@@ -11,13 +11,30 @@
   "home": {
     "intro1": "Olá, me chamo Willians Tavares! Atualmente atuo como Tech Lead na",
     "intro1Company": "Konia Tecnologia",
-    "intro2": "Sou apaixonado por desenvolvimento, tenho uma base sólida em .Net, Kotlin e Javascript. Minha experiência também abrange DevOps e Cloud utilizando ambientes como Azure, Azure Devops e AWS.",
+    "intro2": "Sou apaixonado por desenvolvimento, com uma base sólida em .Net, Kotlin e Javascript. Minha experiência também abrange DevOps e Cloud utilizando ambientes como Azure, Azure DevOps e AWS.",
     "intro3": "Meu objetivo é simplificar soluções complexas",
     "intro3Rest": ", buscando formas eficientes de resolver os desafios que surgem durante o desenvolvimento dos projetos.",
     "latestActivity": "Última atividade",
     "readMore": "Leia mais →",
     "badgePost": "Artigo",
-    "badgeProject": "Projeto"
+    "badgeProject": "Projeto",
+    "seeMore": "Ver mais",
+    "seeLess": "Ver menos",
+    "timelineTitle": "Trajetória",
+    "availableBadge": "Disponível para novos projetos",
+    "heroGreeting": "Olá, eu sou",
+    "heroName": "Willians Tavares",
+    "heroRole": "Tech Lead & Desenvolvedor Full-Stack",
+    "heroDescription": "Sou desenvolvedor de software, no Brasil. Gosto de transformar problemas confusos e complexos em software simples de usar e fácil de manter — e de escrever sobre o que aprendo no caminho.",
+    "ctaPosts": "Ler o blog",
+    "ctaProjects": "Ver os projetos",
+    "aboutTitle": "Sobre",
+    "skillsTitle": "Com o que eu trabalho",
+    "projectsTitle": "Projetos",
+    "projectsSubtitle": "Algumas coisas que construí — de ferramentas de produtividade a apps mobile e jogos.",
+    "viewAllProjects": "Ver todos os projetos →",
+    "contactTitle": "Fale comigo",
+    "contactSubtitle": "Fique à vontade para entrar em contato — sobre código, um projeto ou só pra dar um oi."
   },
   "posts": {
     "pageDescription": "Artigos sobre desenvolvimento de software, arquitetura, boas práticas e experiências compartilhadas ao longo da minha jornada como desenvolvedor.",

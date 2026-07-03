@@ -1,7 +1,7 @@
 {
   "site": {
     "title": "Willians Tavares",
-    "description": "This is my hub."
+    "description": "Tech Lead & Full-Stack Developer specialized in .NET, Kotlin and React/TypeScript, with experience in software architecture, DevOps and cloud."
   },
   "nav": {
     "home": "Home",
@@ -17,7 +17,24 @@
     "latestActivity": "Latest activity",
     "readMore": "Read more →",
     "badgePost": "Article",
-    "badgeProject": "Project"
+    "badgeProject": "Project",
+    "seeMore": "See more",
+    "seeLess": "See less",
+    "timelineTitle": "Journey",
+    "availableBadge": "Available for new Projects",
+    "heroGreeting": "Hi, I'm",
+    "heroName": "Willians Tavares",
+    "heroRole": "Tech Lead & Full-Stack Developer",
+    "heroDescription": "I'm a software developer based in Brazil. I like turning messy, complex problems into software that's simple to use and easy to maintain — and I write about what I learn along the way.",
+    "ctaPosts": "Read the blog",
+    "ctaProjects": "See the projects",
+    "aboutTitle": "About",
+    "skillsTitle": "What I work with",
+    "projectsTitle": "Projects",
+    "projectsSubtitle": "A few things I've built — from productivity tools to mobile apps and small games.",
+    "viewAllProjects": "See all projects →",
+    "contactTitle": "Get in touch",
+    "contactSubtitle": "Feel free to reach out — about code, an idea, or just to say hello."
   },
   "posts": {
     "pageDescription": "Articles about software development, architecture, best practices, and experiences shared throughout my journey as a developer.",

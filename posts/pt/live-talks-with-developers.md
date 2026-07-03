@@ -1,5 +1,5 @@
 ---
-title: 📺 Live - Tirando dúvidas sobre o início de carreira como Desenvolvedor! 
+title: 📺 Live - Tirando dúvidas sobre o início de carreira como Desenvolvedor!
 date: 2022/11/04
 description: Sessão de bate-papo ao vivo, com intuito de sanar suas dúvidas sobre o início de carreira como Desenvolvedor.
 tag: live

@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout'
 import Link from 'next/link'
+import Reveal from '../../components/Reveal'
 import { getAllPosts, Post } from '../../lib/posts'
 import { GetStaticProps } from 'next'
 import { useState, useMemo } from 'react'
@@ -20,21 +21,17 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
 
   const filteredPosts = useMemo(() => {
     if (!selectedTag) return posts
-    return posts.filter((post) => 
-      post.tag?.toLowerCase().includes(selectedTag.toLowerCase())
-    )
+    return posts.filter((post) => post.tag?.toLowerCase().includes(selectedTag.toLowerCase()))
   }, [posts, selectedTag])
 
   return (
     <Layout title={tNav('posts')} description={t('pageDescription')}>
-      <p className="page-description">
-        {t('pageDescription')}
-      </p>
+      <p className="page-description">{t('pageDescription')}</p>
 
       <div className="tags-filter">
         <span className="filter-label">{t('filterByTag')}</span>
         <div className="tags-list">
-          <button 
+          <button
             className={`tag-filter ${!selectedTag ? 'active' : ''}`}
             onClick={() => setSelectedTag(null)}
           >
@@ -56,21 +53,19 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
         <p className="no-posts">{t('noPostsFound')}</p>
       ) : (
         <div className="posts-list">
-          {filteredPosts.map((post) => (
+          {filteredPosts.map((post, index) => (
             <Link key={post.slug} href={`/posts/${post.slug}`} className="post-card-link">
-              <article className="post-card">
+              <Reveal as="article" className="post-card" delay={Math.min(index * 0.07, 0.28)}>
                 <h2>{post.title}</h2>
                 <time className="post-date">
                   {new Date(post.date).toLocaleDateString(dateLocale)}
                 </time>
-                {post.description && (
-                  <p className="post-description">{post.description}</p>
-                )}
+                {post.description && <p className="post-description">{post.description}</p>}
                 {post.tag && (
                   <div className="post-tags">
                     {post.tag.split(',').map((tag) => (
-                      <span 
-                        key={tag.trim()} 
+                      <span
+                        key={tag.trim()}
                         className="tag clickable"
                         onClick={(e) => {
                           e.preventDefault()
@@ -83,7 +78,7 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
                   </div>
                 )}
                 <span className="read-more">{t('readMore')}</span>
-              </article>
+              </Reveal>
             </Link>
           ))}
         </div>
@@ -94,7 +89,7 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
   const posts = getAllPosts(locale || 'pt')
-  
+
   const tagsSet = new Set<string>()
   posts.forEach((post) => {
     if (post.tag) {

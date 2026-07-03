@@ -19,19 +19,22 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
     {
       name: 'LinkedIn',
       icon: '💼',
-      getUrl: () => `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(getShareUrl())}`,
+      getUrl: () =>
+        `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(getShareUrl())}`,
       color: '#0A66C2',
     },
     {
       name: 'Twitter',
       icon: '🐦',
-      getUrl: () => `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodeURIComponent(getShareUrl())}`,
+      getUrl: () =>
+        `https://twitter.com/intent/tweet?text=${encodedTitle}&url=${encodeURIComponent(getShareUrl())}`,
       color: '#1DA1F2',
     },
     {
       name: 'WhatsApp',
       icon: '📱',
-      getUrl: () => `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodeURIComponent(getShareUrl())}`,
+      getUrl: () =>
+        `https://api.whatsapp.com/send?text=${encodedTitle}%20${encodeURIComponent(getShareUrl())}`,
       color: '#25D366',
     },
     {
@@ -50,7 +53,7 @@ export default function ShareButtons({ title, url }: ShareButtonsProps) {
     },
   ]
 
-  const handleShare = (link: typeof shareLinks[0]) => {
+  const handleShare = (link: (typeof shareLinks)[0]) => {
     if (link.action) {
       link.action()
     } else {

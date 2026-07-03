@@ -22,9 +22,7 @@ export function getPostSlugs(locale: string = 'pt'): string[] {
   if (!fs.existsSync(dir)) {
     return []
   }
-  return fs.readdirSync(dir).filter(file => 
-    file.endsWith('.md') && !file.startsWith('index')
-  )
+  return fs.readdirSync(dir).filter((file) => file.endsWith('.md') && !file.startsWith('index'))
 }
 
 export function getPostBySlug(slug: string, locale: string = 'pt'): Post {
@@ -47,11 +45,13 @@ export function getAllPosts(locale: string = 'pt'): Post[] {
   const slugs = getPostSlugs(locale)
   const posts = slugs
     .map((slug) => getPostBySlug(slug.replace(/\.md$/, ''), locale))
-    .sort((a, b) => (new Date(b.date).getTime() - new Date(a.date).getTime()))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
   return posts
 }
 
-export function getAllLocalePostPaths(locales: string[]): { params: { slug: string }; locale: string }[] {
+export function getAllLocalePostPaths(
+  locales: string[]
+): { params: { slug: string }; locale: string }[] {
   const paths: { params: { slug: string }; locale: string }[] = []
   for (const locale of locales) {
     const slugs = getPostSlugs(locale)

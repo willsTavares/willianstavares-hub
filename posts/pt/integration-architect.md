@@ -11,9 +11,7 @@ A arquitetura de integração refere-se à estrutura e design de sistemas que fa
 
 Dessa maneira surge a arquitetura de integração, como uma forma de estabelecer formatos e mecanismos que evite ao máximo a latência com a qual os dados serão disponibilizados entre os sistemas, assim como independência de cada serviço nessa rede de conexões. Em alguns casos, para ocorrer a integração é necessário a chamada de uma API, em outros, as tecnologias precisam de uma comunicação assíncrona, necessitando de algo como mensagens ou eventos.
 
-
 Todos os processos precisam de sua devida orquestração, ou seja, independente de tecnologia envolvidas na integração, é necessário um planejamento visando uma maneira simples de garantir os fluxos e execução do modelo de negócio.
-
 
 Elementos técnicos que consistem na arquitetura:
 
@@ -33,7 +31,6 @@ O maior benefício dessa arquitetura é que se torna possível enxergar todas as
 
 Além de poder se relacionar com as demais arquiteturas com interdependência. Exige da organização conhecimento prévio das necessidades e requisitos de seu próprio negócio e todas as possíveis integrações.
 
-
 Empresas que aplicam cases de arquitetura de integração em suas soluções:
 
 **Amazon**: A empresa utiliza a arquitetura de integração para integrar seus diversos serviços e plataformas, como o Amazon Web Services (AWS) e o Amazon Marketplace.
@@ -47,5 +44,3 @@ Empresas que aplicam cases de arquitetura de integração em suas soluções:
 **American Airlines**: A American Airlines implementou uma arquitetura de integração baseada em barramento de serviços para integrar seus sistemas de reserva, check-in e bagagem. A arquitetura de integração permitiu que a American Airlines melhorasse a eficiência de seus processos de negócios e oferecesse uma experiência de viagem mais integrada e personalizada para seus clientes.
 
 Esses são apenas alguns exemplos de casos de sucesso de arquitetura de integração. A escolha da arquitetura de integração mais adequada deve levar em consideração as necessidades específicas de cada empresa e dos sistemas envolvidos.
-
-

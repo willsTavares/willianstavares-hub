@@ -4,6 +4,7 @@ date: 2023/8/18
 description: Descubra como a Arquitetura Hexagonal transforma o design de software, trazendo benefícios práticos para seu projeto. Explore sua eficácia e aplicação neste estudo aprofundado.
 tag: arquitetura de software
 ---
+
 # Arquitetura Hexagonal
 
 A Arquitetura Hexagonal consiste em dividir em camadas as classes de um sistema, onde as regras de negócio e entidades ficam na camada principal, a de Domínio, dessa forma é possível garantir a integridade da aplicação, reutilização das regras de negócio para diversas plataformas como web e mobile além da fácil substituição de tecnologias externas como banco de dados devido à falta de dependências de framework.
@@ -18,11 +19,10 @@ Com a camada de Domínio sendo a camada principal da arquitetura, é importante 
 
 Adaptadores atuam se comunicando com as portas, para que haja comunicação interna e externa da aplicação. Uma porta (interface) é uma especificação de como o domínio pode ser utilizado, ou seja, para entrada ou saída da aplicação:
 
-- Porta de Entrada (Input) são as interfaces utilizadas para comunicação de fora para dentro do Hexágono, 
+- Porta de Entrada (Input) são as interfaces utilizadas para comunicação de fora para dentro do Hexágono,
 - Porta de Saída (Output) a comunicação de dentro para fora do domínio, como banco de dados, retorno de APIs e etc.
 
 É importante ressaltar que as Portas pertencem a lógica de negócio, ou seja, as portas são independentes de tecnologia. Enquanto os Adaptadores pertencem a parte externa da camada, normalmente utilizando alguma tecnologia, seja de comunicação (como API Rest), banco de dados (como SQL Server) ou interação de usuários.
-
 
 ![Adaptadores e Portas](/images/hexagonal-adapters.svg)
 
@@ -33,6 +33,3 @@ Devido ao foco dessa arquitetura estar em portas e adaptadores para acessar o do
 ![Arquitetura Completa](/images/hexagonal-complete.svg)
 
 A vantagem principal está que arquitetura hexagonal consegue manter a integridade da aplicação construindo um projeto com **independência de tecnologias**, favorecendo a **reusabilidade de código**, baixo acoplamento, **alta coesão e fácil de ser testado**.
-
-
-

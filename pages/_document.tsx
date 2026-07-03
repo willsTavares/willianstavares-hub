@@ -6,6 +6,7 @@ export default function Document(props: DocumentProps) {
     <Html lang={props.locale || 'pt'}>
       <Head>
         <meta name="robots" content="follow, index" />
+        <meta name="theme-color" content="#070d0c" />
       </Head>
       <body>
         <Main />

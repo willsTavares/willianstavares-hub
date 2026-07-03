@@ -12,9 +12,11 @@ const projects: Record<string, Project[]> = {
   pt: [
     {
       title: 'EstimaTech',
-      description: 'Ferramenta moderna de estimativa de projetos com percentuais de overhead técnico configuráveis, gerenciamento de tarefas/subtarefas, planejamento de sprints e exportação para Excel/CSV.',
+      description:
+        'Ferramenta moderna de estimativa de projetos com percentuais de overhead técnico configuráveis, gerenciamento de tarefas/subtarefas, planejamento de sprints e exportação para Excel/CSV.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui'],
       repo: 'https://github.com/willsTavares/estimatech',
+      demo: 'https://estimate-ease-eight.vercel.app/',
       date: '2026/04/19',
       status: 'active',
     },
@@ -36,7 +38,8 @@ const projects: Record<string, Project[]> = {
     },
     {
       title: 'Ear Training Game',
-      description: 'Jogo mobile para melhorar a percepção musical através de exercícios interativos.',
+      description:
+        'Jogo mobile para melhorar a percepção musical através de exercícios interativos.',
       tags: ['React Native', 'JavaScript', 'Teoria Musical'],
       repo: 'https://github.com/willsTavares/ear-training-game',
       date: '2025/12/24',
@@ -44,15 +47,18 @@ const projects: Record<string, Project[]> = {
     },
     {
       title: 'willianstavares-hub',
-      description: 'Meu hub pessoal construído com Next.js, TypeScript e suporte multi-idioma (PT/EN).',
+      description:
+        'Meu hub pessoal construído com Next.js, TypeScript e suporte multi-idioma (PT/EN).',
       tags: ['Next.js', 'TypeScript', 'i18n'],
       repo: 'https://github.com/willsTavares/willianstavares-hub',
+      demo: 'https://willians-tavares.com',
       date: '2026/04/19',
       status: 'active',
     },
     {
       title: 'Update Check',
-      description: 'Ferramenta de linha de comando para verificar atualizações de dependências em projetos Node.',
+      description:
+        'Ferramenta de linha de comando para verificar atualizações de dependências em projetos Node.',
       tags: ['Go', 'CLI'],
       repo: 'https://github.com/willsTavares/update-check',
       date: '2024/09/15',
@@ -86,9 +92,11 @@ const projects: Record<string, Project[]> = {
   en: [
     {
       title: 'EstimaTech',
-      description: 'A modern project estimation tool with configurable technical overhead percentages, task/subtask management, sprint planning and Excel/CSV export capabilities.',
+      description:
+        'A modern project estimation tool with configurable technical overhead percentages, task/subtask management, sprint planning and Excel/CSV export capabilities.',
       tags: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'shadcn/ui'],
       repo: 'https://github.com/willsTavares/estimatech',
+      demo: 'https://estimate-ease-eight.vercel.app/',
       date: '2026/04/19',
       status: 'active',
     },
@@ -118,9 +126,11 @@ const projects: Record<string, Project[]> = {
     },
     {
       title: 'willianstavares-hub',
-      description: 'My personal hub built with Next.js, TypeScript and multi-language support (PT/EN).',
+      description:
+        'My personal hub built with Next.js, TypeScript and multi-language support (PT/EN).',
       tags: ['Next.js', 'TypeScript', 'i18n'],
       repo: 'https://github.com/willsTavares/willianstavares-hub',
+      demo: 'https://willians-tavares.com',
       date: '2026/04/18',
       status: 'active',
     },

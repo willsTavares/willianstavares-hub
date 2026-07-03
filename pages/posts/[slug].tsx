@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout'
 import Link from 'next/link'
+import Reveal from '../../components/Reveal'
 import { getPostBySlug, getAllLocalePostPaths, Post } from '../../lib/posts'
 import { GetStaticProps, GetStaticPaths } from 'next'
 import ReactMarkdown from 'react-markdown'
@@ -33,13 +34,11 @@ export default function PostPage({ post }: PostPageProps) {
         <span className="breadcrumb-separator">/</span>
         <span className="breadcrumb-current">{post.title}</span>
       </nav>
-      <article className="post-content">
+      <Reveal as="article" className="post-content">
         <header className="post-header">
           <h1>{post.title}</h1>
           <div className="post-meta">
-            <time className="post-date">
-              {new Date(post.date).toLocaleDateString(dateLocale)}
-            </time>
+            <time className="post-date">{new Date(post.date).toLocaleDateString(dateLocale)}</time>
             <span className="separator">&middot;</span>
             <span className="reading-time">{t('readingTime', { minutes: readingTime })}</span>
           </div>
@@ -53,18 +52,21 @@ export default function PostPage({ post }: PostPageProps) {
             </div>
           )}
         </header>
-        
+
         <div className="prose">
-          <ReactMarkdown 
+          <ReactMarkdown
             remarkPlugins={[remarkGfm]}
             rehypePlugins={[rehypeRaw]}
             components={{
               // @ts-expect-error Bleed is a custom MDX tag used in some posts
               bleed: ({ children }) => <div className="bleed">{children}</div>,
               img: ({ src, alt }) => (
-                <img 
-                  src={src?.startsWith('/') ? src : `/images/${src}`} 
-                  alt={alt || ''} 
+                // Markdown images have unknown intrinsic dimensions, so next/image
+                // (which requires width/height) is not a good fit here.
+                // eslint-disable-next-line @next/next/no-img-element
+                <img
+                  src={src?.startsWith('/') ? src : `/images/${src}`}
+                  alt={alt || ''}
                   style={{ maxWidth: '100%', height: 'auto' }}
                 />
               ),
@@ -74,9 +76,9 @@ export default function PostPage({ post }: PostPageProps) {
                 </a>
               ),
               iframe: ({ src, ...props }) => (
-                <iframe 
-                  src={src} 
-                  {...props} 
+                <iframe
+                  src={src}
+                  {...props}
                   className="podcast"
                   style={{ width: '100%', borderRadius: '12px' }}
                 />
@@ -86,7 +88,7 @@ export default function PostPage({ post }: PostPageProps) {
             {post.content}
           </ReactMarkdown>
         </div>
-      </article>
+      </Reveal>
     </Layout>
   )
 }

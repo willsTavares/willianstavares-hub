@@ -18,9 +18,9 @@ PostgreSQL has a view called `pg_stat_activity` that is a real lifesaver for any
 To see all queries currently running, you can use:
 
 ```sql
-SELECT pid, usename, query_start, state, query 
-FROM pg_stat_activity 
-WHERE state = 'active' 
+SELECT pid, usename, query_start, state, query
+FROM pg_stat_activity
+WHERE state = 'active'
   AND pid <> pg_backend_pid();
 ```
 
@@ -31,16 +31,16 @@ The `pid <> pg_backend_pid()` filter is used to exclude the query we're executin
 One of the most common situations is needing to find that query that's taking longer than it should. For this, we can sort by execution time:
 
 ```sql
-SELECT 
-    pid, 
-    usename, 
-    query_start, 
-    now() - query_start AS duration, 
-    state, 
-    query 
-FROM pg_stat_activity 
-WHERE state = 'active' 
-  AND pid <> pg_backend_pid() 
+SELECT
+    pid,
+    usename,
+    query_start,
+    now() - query_start AS duration,
+    state,
+    query
+FROM pg_stat_activity
+WHERE state = 'active'
+  AND pid <> pg_backend_pid()
 ORDER BY duration DESC;
 ```
 
@@ -49,16 +49,16 @@ ORDER BY duration DESC;
 If you want to see only queries that have been running for more than a minute (usually a warning sign), use:
 
 ```sql
-SELECT 
-    pid, 
-    usename, 
-    query_start, 
-    now() - query_start AS duration, 
-    state, 
-    query 
-FROM pg_stat_activity 
-WHERE state = 'active' 
-  AND now() - query_start > interval '1 minute' 
+SELECT
+    pid,
+    usename,
+    query_start,
+    now() - query_start AS duration,
+    state,
+    query
+FROM pg_stat_activity
+WHERE state = 'active'
+  AND now() - query_start > interval '1 minute'
 ORDER BY duration DESC;
 ```
 
@@ -91,9 +91,9 @@ SELECT pg_terminate_backend(12345);
 A practice I adopted in projects is adding identifier comments in the application's queries. This greatly helps when tracing which part of the system is generating a particular query:
 
 ```sql
-SELECT pid, usename, query_start, state, query 
-FROM pg_stat_activity 
-WHERE query ILIKE '%/* OrdersModule */%' 
+SELECT pid, usename, query_start, state, query
+FROM pg_stat_activity
+WHERE query ILIKE '%/* OrdersModule */%'
   AND state = 'active';
 ```
 

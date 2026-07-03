@@ -4,6 +4,7 @@ date: 2023/8/18
 description: Discover how Hexagonal Architecture transforms software design, bringing practical benefits to your project. Explore its effectiveness and application in this in-depth study.
 tag: software architecture
 ---
+
 # Hexagonal Architecture
 
 Hexagonal Architecture consists of dividing a system's classes into layers, where business rules and entities reside in the main layer — the Domain. This way, it's possible to ensure the application's integrity, reuse business rules across multiple platforms such as web and mobile, and easily replace external technologies like databases due to the lack of framework dependencies.

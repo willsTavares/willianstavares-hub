@@ -14,15 +14,17 @@ Requirements can be classified in two ways:
 **Functional Requirements:** address the system's behavior the way the user desires, describing how the application should behave in certain situations.
 
 For example:
-* "The system must have a search input"
-* "The app must have a registration form"
-* "The user should be able to change registration information"
+
+- "The system must have a search input"
+- "The app must have a registration form"
+- "The user should be able to change registration information"
 
 **Non-Functional Requirements:** describe how the application will be developed — the resources needed to put functional requirements into practice, being linked to application characteristics or constraints.
 
 For example:
-   - "The app will use an Azure SQL Database for storing user data"
-   - "The registration form will be built with HTML and JavaScript"
+
+- "The app will use an Azure SQL Database for storing user data"
+- "The registration form will be built with HTML and JavaScript"
 
 It's essential in this first part that some interviews are conducted with the client for a general understanding of the project, understanding of the user's current scenario, the client's main expectations, all possible project constraints, and what is truly necessary for the application.
 
@@ -30,41 +32,41 @@ It's essential in this first part that some interviews are conducted with the cl
 
 Some tips on how to proceed during interviews so that requirements can emerge coherently:
 
-* Always keep an open mind;
-* Let the user have space to bring their vision of the project;
-* Be prepared for changes during this gathering phase;
-* Bring your questions or prepare an interview script;
-* Take note of as much information as possible;
+- Always keep an open mind;
+- Let the user have space to bring their vision of the project;
+- Be prepared for changes during this gathering phase;
+- Bring your questions or prepare an interview script;
+- Take note of as much information as possible;
 
-Documentation
----------------------
+## Documentation
+
 ---
 
 Separate the requirements into two tables: one for functional requirements (FR) and another for non-functional requirements (NFR).
 
 It's important to note that each requirement must be validated by meeting certain criteria:
 
-* Be necessary for the application;
-* Be clear, leaving no room for double interpretation;
-* Be achievable — the development team must be capable of executing it;
-* Have connections with other requirements;
+- Be necessary for the application;
+- Be clear, leaving no room for double interpretation;
+- Be achievable — the development team must be capable of executing it;
+- Have connections with other requirements;
 
 Below is an example of how to organize functional and non-functional requirements for a simple login and registration screen:
 
 **Functional Requirements**
 
-* FR01: The app must allow the user to access the application with Username and Password.
-* FR02: The app must allow the user to register in the application with the following fields on the registration screen:
-        Email;
-        Username;
-        National ID;
-        Password;
-        Password confirmation;
-* FR03: The app must allow the user to change their registration information, created in FR02, except for the National ID field.
+- FR01: The app must allow the user to access the application with Username and Password.
+- FR02: The app must allow the user to register in the application with the following fields on the registration screen:
+  Email;
+  Username;
+  National ID;
+  Password;
+  Password confirmation;
+- FR03: The app must allow the user to change their registration information, created in FR02, except for the National ID field.
 
 **Non-Functional Requirements**
 
-* NFR01: User data must be stored in a SQL database.
+- NFR01: User data must be stored in a SQL database.
 
 After writing the requirements, there are several ways to group them according to their importance to the system.
 
@@ -78,9 +80,10 @@ One of these ways is to separate requirements by Criteria — requirements can b
 
 Another way to group requirements is by priority, defining high, medium, or low priority for each requirement with the following question: "What is considered most important for the user in the system?"
 
-Validation
----------------------
+## Validation
+
 ---
+
 User validation is the last part of requirements gathering — this is where the user reviews all documented requirements, and each requirement is clarified and verified. This verification is useful for validating whether the requirements are truly necessary, whether there are any conflicts between them, whether they meet all constraints, and whether they can actually be implemented by the team.
 
 Be aware that at this stage, some requirements may be changed or new requirements may also arise during the discussion with the user.

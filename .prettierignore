@@ -1,0 +1,8 @@
+node_modules/
+.next/
+out/
+public/feed*.xml
+public/feed.xml
+public/sitemap.xml
+public/sw.js
+package-lock.json

@@ -9,14 +9,14 @@ Neste episódio conversaremos sobre o mundo de desenvolvimento e como montar ou 
 
 Pauta:
 
-* Perfis de desenvolvimento
-    * Front
-    * Back
-    * Mobile
-    * QA
-* Perfil do desenvolvedor, como encontrar o seu?
-* Cursos, certificações, graduação...
-* Qual a importância de ser autodidata trabalhando em casa
-* Conclusão / Considerações finais.
+- Perfis de desenvolvimento
+  - Front
+  - Back
+  - Mobile
+  - QA
+- Perfil do desenvolvedor, como encontrar o seu?
+- Cursos, certificações, graduação...
+- Qual a importância de ser autodidata trabalhando em casa
+- Conclusão / Considerações finais.
 
 <iframe class="podcast" src="https://open.spotify.com/embed/episode/6cxPria847HOOLo5aTr6zG?utm_source=generator" width="100%" height="352" frameborder="0" allowfullscreen allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>

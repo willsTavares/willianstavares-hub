@@ -1,133 +1,182 @@
 import Layout from '../components/Layout'
 import Link from 'next/link'
-import { getAllPosts, Post } from '../lib/posts'
+import Image from 'next/image'
+import Timeline from '../components/Timeline'
+import Reveal from '../components/Reveal'
 import { getAllProjects, Project } from '../lib/projects'
 import { GetStaticProps } from 'next'
 import { useTranslations } from 'next-intl'
-import { useRouter } from 'next/router'
-
-type LatestActivity =
-  | { type: 'post'; data: Post }
-  | { type: 'project'; data: Project }
-  | null
 
 interface HomeProps {
-  latestActivity: LatestActivity
+  projects: Project[]
 }
 
-export default function Home({ latestActivity }: HomeProps) {
+const skillSets = [
+  { label: 'Backend', tags: ['.NET', 'C#', 'Node', 'Kotlin', 'Go', 'Java'] },
+  { label: 'Databases', tags: ['PostgreSQL', 'Redis', 'SQL Server', 'MongoDB', 'Oracle'] },
+  { label: 'Architecture', tags: ['Microservices', 'REST', 'Clean Architecture', 'Hexagonal'] },
+  { label: 'Frontend', tags: ['JavaScript', 'TypeScript', 'React', 'Next.js'] },
+  { label: 'Mobile', tags: ['Kotlin', 'React Native'] },
+  {
+    label: 'DevOps & Cloud',
+    tags: ['CI/CD', 'Azure', 'AWS', 'Azure DevOps', 'Docker', 'Kubernetes'],
+  },
+]
+
+export default function Home({ projects }: HomeProps) {
   const t = useTranslations('home')
   const tProjects = useTranslations('projects')
-  const router = useRouter()
-  const dateLocale = router.locale === 'pt' ? 'pt-BR' : 'en-US'
 
   return (
-    <Layout>      
-      <p>
-        {t('intro1')}{' '}
-        <a href="https://konia.com.br/" target="_blank" rel="noopener noreferrer">
-          {t('intro1Company')}
-        </a>
-        .
-      </p>
-      
-      <p>
-        {t('intro2')}
-      </p>
-      
-      <p>
-        <strong>{t('intro3')}</strong>
-        {t('intro3Rest')}
-      </p>
+    <Layout>
+      {/* Hero */}
+      <Reveal as="section" className="hero-section">
+        <h1 className="hero-title">
+          {t('heroGreeting')} <span className="hero-name">{t('heroName')}</span>
+        </h1>
+        <p className="hero-role">{t('heroRole')}</p>
+        <p className="hero-description">{t('heroDescription')}</p>
+        <div className="hero-actions">
+          <Link href="/posts" className="btn-primary">
+            {t('ctaPosts')}
+          </Link>
+          <Link href="/projects" className="btn-secondary">
+            {t('ctaProjects')}
+          </Link>
+        </div>
+      </Reveal>
 
-      {latestActivity && (
-        <section className="latest-post-section">
-          <h2 className="section-title">{t('latestActivity')}</h2>
+      {/* About */}
+      <Reveal as="section" className="home-section">
+        <h2 className="section-heading">{t('aboutTitle')}</h2>
+        <p className="about-text">{t('intro2')}</p>
+        <p className="about-text">
+          <strong>{t('intro3')}</strong>
+          {t('intro3Rest')}
+        </p>
+      </Reveal>
 
-          {latestActivity.type === 'post' ? (
-            <Link href={`/posts/${latestActivity.data.slug}`} className="post-card-link">
-              <article className="post-card compact">
-                <h3>{latestActivity.data.title}</h3>
-                <div className="activity-date-row">
-                  <time className="post-date">
-                    {new Date(latestActivity.data.date).toLocaleDateString(dateLocale)}
-                  </time>
-                  <span className="activity-badge activity-post">{t('badgePost')}</span>
-                </div>
-                {latestActivity.data.description && (
-                  <p className="post-description">{latestActivity.data.description}</p>
+      {/* Skills & Technologies */}
+      <section className="home-section">
+        <Reveal>
+          <h2 className="section-heading">{t('skillsTitle')}</h2>
+        </Reveal>
+        <div className="skills-grid">
+          {skillSets.map((set, index) => (
+            <Reveal key={set.label} className="skill-card" delay={index * 0.08}>
+              <p className="skill-card-label">{set.label}</p>
+              <div className="skill-tags">
+                {set.tags.map((tag) => (
+                  <span key={tag} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      {/* Experience */}
+      <Reveal as="section" className="home-section">
+        <h2 className="section-heading">{t('timelineTitle')}</h2>
+        <Timeline />
+      </Reveal>
+
+      {/* My Projects */}
+      <section className="home-section">
+        <Reveal>
+          <h2 className="section-heading">{t('projectsTitle')}</h2>
+          <p className="section-subtitle">{t('projectsSubtitle')}</p>
+        </Reveal>
+        <div className="home-projects-grid">
+          {projects.slice(0, 3).map((project, index) => (
+            <Reveal key={project.title} className="home-project-card" delay={index * 0.1}>
+              <h3 className="home-project-title">{project.title}</h3>
+              <p className="home-project-description">{project.description}</p>
+              <div className="home-project-tags">
+                {project.tags.map((tag) => (
+                  <span key={tag} className="tag">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <div className="home-project-links">
+                {project.repo && (
+                  <a
+                    href={project.repo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link-btn"
+                  >
+                    {tProjects('repository')}
+                  </a>
                 )}
-                {latestActivity.data.tag && (
-                  <div className="post-tags">
-                    {latestActivity.data.tag.split(',').map((tag) => (
-                      <span key={tag.trim()} className="tag">
-                        {tag.trim()}
-                      </span>
-                    ))}
-                  </div>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="project-link-btn"
+                  >
+                    {tProjects('demo')}
+                  </a>
                 )}
-                <span className="read-more">{t('readMore')}</span>
-              </article>
-            </Link>
-          ) : (
-            <a
-              href={latestActivity.data.repo || latestActivity.data.demo || '#'}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="post-card-link"
-            >
-              <article className="project-card compact">
-                <div className="project-card-header">
-                  <div>
-                    <h3>{latestActivity.data.title}</h3>
-                  </div>
-                </div>
-                <div className="activity-date-row">
-                  <time className="post-date">
-                    {new Date(latestActivity.data.date).toLocaleDateString(dateLocale)}
-                  </time>
-                  <span className="activity-badge activity-project">{t('badgeProject')}</span>
-                </div>
-                <p className="project-description">{latestActivity.data.description}</p>
-                <div className="project-tags">
-                  {latestActivity.data.tags.map((tag) => (
-                    <span key={tag} className="tag project-tag">{tag}</span>
-                  ))}
-                </div>
-                <span className="read-more project-link">{tProjects('repository')} →</span>
-              </article>
-            </a>
-          )}
-        </section>
-      )}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+        <Reveal className="view-all-posts">
+          <Link href="/projects" className="view-all-link">
+            {t('viewAllProjects')}
+          </Link>
+        </Reveal>
+      </section>
+
+      {/* Contact */}
+      <Reveal as="section" className="home-section">
+        <h2 className="section-heading">{t('contactTitle')}</h2>
+        <p className="about-text">{t('contactSubtitle')}</p>
+        <div className="contact-social-row">
+          <a
+            href="https://www.linkedin.com/in/willians-tavares95/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-link"
+          >
+            <Image src="/images/linkedin-icon.png" alt="LinkedIn" width={22} height={22} />
+            LinkedIn
+          </a>
+          <a
+            href="https://github.com/willsTavares"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-link"
+          >
+            <Image src="/images/github_icon.png" alt="GitHub" width={22} height={22} />
+            GitHub
+          </a>
+          <a
+            href="https://api.whatsapp.com/send?phone=5511943206420"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="contact-social-link"
+          >
+            <Image src="/images/whatsapp_icon.png" alt="WhatsApp" width={22} height={22} />
+            WhatsApp
+          </a>
+        </div>
+      </Reveal>
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  const posts = getAllPosts(locale || 'pt')
   const projects = getAllProjects(locale || 'pt')
-
-  const latestPost = posts.length > 0 ? posts[0] : null
-  const latestProject = projects.length > 0 ? projects[0] : null
-
-  let latestActivity: LatestActivity = null
-
-  if (latestPost && latestProject) {
-    const postDate = new Date(latestPost.date).getTime()
-    const projectDate = new Date(latestProject.date).getTime()
-    latestActivity = projectDate >= postDate
-      ? { type: 'project', data: latestProject }
-      : { type: 'post', data: latestPost }
-  } else if (latestPost) {
-    latestActivity = { type: 'post', data: latestPost }
-  } else if (latestProject) {
-    latestActivity = { type: 'project', data: latestProject }
-  }
 
   return {
     props: {
-      latestActivity,
+      projects,
       messages: (await import(`../messages/${locale || 'pt'}.json`)).default,
     },
   }

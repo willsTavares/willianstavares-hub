@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import Timeline from '../components/Timeline'
 import Reveal from '../components/Reveal'
+import ScrollHint from '../components/ScrollHint'
 import { getAllProjects, Project } from '../lib/projects'
 import { GetStaticProps } from 'next'
 import { useTranslations } from 'next-intl'
@@ -45,6 +46,8 @@ export default function Home({ projects }: HomeProps) {
           </Link>
         </div>
       </Reveal>
+
+      <ScrollHint />
 
       {/* About */}
       <Reveal as="section" className="home-section">

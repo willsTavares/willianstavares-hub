@@ -1,5 +1,6 @@
 import Layout from '../../components/Layout'
 import Reveal from '../../components/Reveal'
+import ScrollHint from '../../components/ScrollHint'
 import { GetStaticProps } from 'next'
 import { useTranslations } from 'next-intl'
 import { getAllProjects, Project } from '../../lib/projects'
@@ -57,6 +58,8 @@ export default function ProjectsPage({ projects }: { projects: Project[] }) {
           ))}
         </div>
       )}
+
+      <ScrollHint />
     </Layout>
   )
 }

@@ -1,6 +1,7 @@
 import Layout from '../../components/Layout'
 import Link from 'next/link'
 import Reveal from '../../components/Reveal'
+import ScrollHint from '../../components/ScrollHint'
 import { getAllPosts, Post } from '../../lib/posts'
 import { GetStaticProps } from 'next'
 import { useState, useMemo } from 'react'
@@ -83,6 +84,8 @@ export default function PostsPage({ posts, allTags }: PostsPageProps) {
           ))}
         </div>
       )}
+
+      <ScrollHint />
     </Layout>
   )
 }

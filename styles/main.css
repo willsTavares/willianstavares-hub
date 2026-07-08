@@ -119,6 +119,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
 }
 
 .site-title {
@@ -127,6 +129,7 @@ body {
   color: var(--text-color);
   text-decoration: none;
   transition: color 0.2s;
+  white-space: nowrap;
 }
 
 .site-title:hover {
@@ -622,6 +625,10 @@ hr {
 @media (max-width: 640px) {
   .container {
     padding: 1rem;
+  }
+
+  .nav {
+    gap: 1.125rem;
   }
 
   h1 {
@@ -1162,6 +1169,40 @@ hr {
   from {
     opacity: 0;
     transform: translateY(20px);
+  }
+}
+
+/* "There's more below" cue — shown briefly on the hero, then fades on scroll/timeout */
+.scroll-hint {
+  position: fixed;
+  left: 50%;
+  bottom: 1.75rem;
+  transform: translateX(-50%);
+  color: var(--text-secondary);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+  z-index: 10;
+}
+
+.scroll-hint-visible {
+  opacity: 0.8;
+  animation: scrollHintBounce 1.8s ease-in-out infinite;
+}
+
+@keyframes scrollHintBounce {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-hint-visible {
+    animation: none;
   }
 }
 
